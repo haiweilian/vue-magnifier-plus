@@ -1,16 +1,16 @@
 {
-  "name": "vue-photo-zoom-pro",
+  "name": "vue-magnifier-plus",
   "description": "Vue picture magnifier",
-  "main": "dist/vue-photo-zoom-pro.js",
-  "module": "dist/vue-photo-zoom-pro.esm.js",
-  "unpkg": "dist/vue-photo-zoom-pro.global.js",
-  "jsdelivr": "dist/vue-photo-zoom-pro.global.js",
-  "version": "3.0.1",
-  "author": "xhb <bxh8640@gmail.com>",
+  "main": "dist/vue-magnifier-plus.js",
+  "module": "dist/vue-magnifier-plus.esm.js",
+  "unpkg": "dist/vue-magnifier-plus.global.js",
+  "jsdelivr": "dist/vue-magnifier-plus.global.js",
+  "version": "1.0.0",
+  "author": "xhb <bxh8640@gmail.com>, haiweilian <haiweilian@foxmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:mater1996/vue-photo-zoom-pro.git"
+    "url": "git@github.com:haiweilian/vue-magnifier-plus.git"
   },
   "files": [
     "dist",

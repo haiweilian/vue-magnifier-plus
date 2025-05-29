@@ -1,38 +1,32 @@
-# vue-photo-zoom-pro
+# vue-magnifier-plus
 
 > Vue 图片放大镜
 
-![example](https://raw.githubusercontent.com/Mater1996/vue-photo-zoom-pro/master/example.png)
+![example](https://raw.githubusercontent.com/haiweilian/vue-magnifier-plus/master/example.png)
 
 ## 安装
 
 ```js
-npm install vue-photo-zoom-pro
-
-# In Vue 2 project
-npm i vue-photo-zoom-pro@2.x
+npm install vue-magnifier-plus
 
 # or
-yarn add vue-photo-zoom-pro
-
-# In Vue 2 project
-yarn add vue-photo-zoom-pro@2.x
+yarn add vue-magnifier-plus
 ```
 
 ## 使用
 
 ```vue
 <template>
-  <vue-photo-zoom-pro :url="imgUrl" :high-url="imgHighUrl"></vue-photo-zoom-pro>
+  <vue-magnifier-plus :url="imgUrl" :high-url="imgHighUrl"></vue-magnifier-plus>
 </template>
 
 <script>
-import vuePhotoZoomPro from 'vue-photo-zoom-pro'
-import 'vue-photo-zoom-pro/dist/style/vue-photo-zoom-pro.css'
+import VueMagnifierPlus from 'vue-magnifier-plus'
+import 'vue-magnifier-plus/dist/style/vue-magnifier-plus.css'
 
 export default {
   components: {
-    vuePhotoZoomPro,
+    VueMagnifierPlus,
   },
 }
 </script>
@@ -40,10 +34,10 @@ export default {
 
 ## 文档
 
-查看文档 [https://mater1996.github.io/vue-photo-zoom-pro/guide/](https://mater1996.github.io/vue-photo-zoom-pro/guide/).
+查看文档 [https://haiweilian.github.io/vue-magnifier-plus/guide/](https://haiweilian.github.io/vue-magnifier-plus/guide/).
 
 ## License
 
 [MIT](https://opensource.org/licenses/MIT)
 
-Copyright (c) 2018-present, mater1996
+Copyright (c) 2018-present, mater1996、haiweilian

@@ -6,7 +6,7 @@
 
 ```vue
 <template>
-  <vue-photo-zoom-pro type="circle" :scale="scale">
+  <vue-magnifier-plus type="circle" :scale="scale">
     <div class="star-sky">
       <div class="landscape"></div>
       <div class="filter"></div>
@@ -19,14 +19,14 @@
         <canvas id="canvas2"></canvas>
       </div>
     </template>
-  </vue-photo-zoom-pro>
+  </vue-magnifier-plus>
 </template>
 
 <script>
-import VuePhotoZoomPro from 'vue-photo-zoom-pro'
+import VueMagnifierPlus from 'vue-magnifier-plus'
 export default {
   components: {
-    VuePhotoZoomPro,
+    VueMagnifierPlus,
   },
 }
 </script>

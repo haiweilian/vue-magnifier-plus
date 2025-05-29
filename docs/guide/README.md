@@ -5,19 +5,19 @@
 ### npm
 
 ```js
-npm install vue-photo-zoom-pro
+npm install vue-magnifier-plus
 
 # or
-yarn add vue-photo-zoom-pro
+yarn add vue-magnifier-plus
 ```
 
 ```js
-import VuePhotoZoomPro from 'vue-photo-zoom-pro'
-import 'vue-photo-zoom-pro/dist/style/vue-photo-zoom-pro.css'
+import VueMagnifierPlus from 'vue-magnifier-plus'
+import 'vue-magnifier-plus/dist/style/vue-magnifier-plus.css'
 
 export default {
   components: {
-    VuePhotoZoomPro,
+    VueMagnifierPlus,
   },
 }
 ```
@@ -25,11 +25,11 @@ export default {
 ### cdn
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/vue-photo-zoom-pro/dist/vue-photo-zoom-pro.global.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue-magnifier-plus/dist/vue-magnifier-plus.global.js"></script>
 <link
   rel="stylesheet"
   type="text/css"
-  href="https://cdn.jsdelivr.net/npm/vue-photo-zoom-pro/dist/style/vue-photo-zoom-pro.css"
+  href="https://cdn.jsdelivr.net/npm/vue-magnifier-plus/dist/style/vue-magnifier-plus.css"
 />
 ```
 
@@ -37,7 +37,7 @@ export default {
 new Vue({
   el: '#app',
   components: {
-    vuePhotoZoomPro: VuePhotoZoomPro.default
+    VueMagnifierPlus: VueMagnifierPlus.default
   }
 }
 ```
@@ -47,23 +47,23 @@ new Vue({
 ### Image
 
 ```html
-<vue-photo-zoom-pro :url="imgUrl" :high-url="imgHighUrl"> </vue-photo-zoom-pro>
+<vue-magnifier-plus :url="imgUrl" :high-url="imgHighUrl"> </vue-magnifier-plus>
 ```
 
 ### Customize Image
 
 ```html
-<vue-photo-zoom-pro :high-url="imgHighUrl">
+<vue-magnifier-plus :high-url="imgHighUrl">
   <img :src="imgUrl" style="height:200px" />
-</vue-photo-zoom-pro>
+</vue-magnifier-plus>
 ```
 
 > Tips: If your image is not loaded at the beginning and set `disabled-reactive`, you must manually listen for the event when the image is loaded before displaying it.
 
 ```html
-<vue-photo-zoom-pro v-if="loaded" :high-url="imgHighUrl" disabled-reactive>
+<vue-magnifier-plus v-if="loaded" :high-url="imgHighUrl" disabled-reactive>
   <img :src="imgUrl" style="height:200px" />
-</vue-photo-zoom-pro>
+</vue-magnifier-plus>
 ```
 
 ```js
@@ -89,21 +89,21 @@ export deafult{
 You can use any element to represent the preview area.
 
 ```html
-<vue-photo-zoom-pro :high-url="imgHighUrl">
+<vue-magnifier-plus :high-url="imgHighUrl">
   <div style="width:100px; height: 200px"></div>
-</vue-photo-zoom-pro>
+</vue-magnifier-plus>
 ```
 
 ### Customize zoom area
 
 ```html
-<vue-photo-zoom-pro>
+<vue-magnifier-plus>
   <template #zoomer>
     <!-- Is the same as the canvas-1 -->
     <canvas id="canvas-2" width="100" height="100"></canvas>
   </template>
   <canvas id="canvas-1" width="100" height="100"></canvas>
-</vue-photo-zoom-pro>
+</vue-magnifier-plus>
 ```
 
 ```js

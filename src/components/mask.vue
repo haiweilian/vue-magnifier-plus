@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  name: 'VuePhotoZoomProMask',
+  name: 'VueMagnifierPlusMask',
   props: {
     width: {
       type: Number,

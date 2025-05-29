@@ -6,14 +6,14 @@
 
 ```vue
 <template>
-  <vue-photo-zoom-pro :mask="true" mode="drag" url="/image.jpg" highUrl="/image-high.jpg"></vue-photo-zoom-pro>
+  <vue-magnifier-plus :mask="true" mode="drag" url="/image.jpg" highUrl="/image-high.jpg"></vue-magnifier-plus>
 </template>
 
 <script>
-import VuePhotoZoomPro from 'vue-photo-zoom-pro'
+import VueMagnifierPlus from 'vue-magnifier-plus'
 export default {
   components: {
-    VuePhotoZoomPro,
+    VueMagnifierPlus,
   },
 }
 </script>

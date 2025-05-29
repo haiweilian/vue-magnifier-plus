@@ -5,25 +5,19 @@
 ### npm
 
 ```js
-npm install vue-photo-zoom-pro
-
-# In Vue 2 project
-npm i vue-photo-zoom-pro@2.x
+npm install vue-magnifier-plus
 
 # or
-yarn add vue-photo-zoom-pro
-
-# In Vue 2 project
-yarn add vue-photo-zoom-pro@2.x
+yarn add vue-magnifier-plus
 ```
 
 ```js
-import vuePhotoZoomPro from 'vue-photo-zoom-pro'
-import 'vue-photo-zoom-pro/dist/style/vue-photo-zoom-pro.css'
+import VueMagnifierPlus from 'vue-magnifier-plus'
+import 'vue-magnifier-plus/dist/style/vue-magnifier-plus.css'
 
 export default {
   components: {
-    vuePhotoZoomPro,
+    VueMagnifierPlus,
   },
 }
 ```
@@ -31,11 +25,11 @@ export default {
 ### cdn
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/vue-photo-zoom-pro/dist/vue-photo-zoom-pro.global.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue-magnifier-plus/dist/vue-magnifier-plus.global.js"></script>
 <link
   rel="stylesheet"
   type="text/css"
-  href="https://cdn.jsdelivr.net/npm/vue-photo-zoom-pro/dist/style/vue-photo-zoom-pro.css"
+  href="https://cdn.jsdelivr.net/npm/vue-magnifier-plus/dist/style/vue-magnifier-plus.css"
 />
 ```
 
@@ -43,7 +37,7 @@ export default {
 new Vue({
   el: '#app',
   components: {
-    vuePhotoZoomPro: VuePhotoZoomPro.default
+    VueMagnifierPlus: VueMagnifierPlus.default
   }
 }
 ```
@@ -53,23 +47,23 @@ new Vue({
 ### 图片
 
 ```html
-<vue-photo-zoom-pro :url="imgUrl" :high-url="imgHighUrl"></vue-photo-zoom-pro>
+<vue-magnifier-plus :url="imgUrl" :high-url="imgHighUrl"></vue-magnifier-plus>
 ```
 
 ### 自定义图片
 
 ```html
-<vue-photo-zoom-pro :high-url="imgHighUrl">
+<vue-magnifier-plus :high-url="imgHighUrl">
   <img :src="imgUrl" style="height:200px" />
-</vue-photo-zoom-pro>
+</vue-magnifier-plus>
 ```
 
 > Tips: 如果图片在开始没有加载完毕并且设置`disabled-reactive`为 true 的话，组件拿到的默认高度是 0，这时候需要在创建组件前加载图片或者给图片默认的高度。
 
 ```html
-<vue-photo-zoom-pro v-if="loaded" :high-url="imgHighUrl" disabled-reactive>
+<vue-magnifier-plus v-if="loaded" :high-url="imgHighUrl" disabled-reactive>
   <img :src="imgUrl" style="height:200px" />
-</vue-photo-zoom-pro>
+</vue-magnifier-plus>
 ```
 
 ```js
@@ -95,21 +89,21 @@ export deafult{
 使用其它元素来作为放大区域。
 
 ```html
-<vue-photo-zoom-pro :high-url="imgHighUrl">
+<vue-magnifier-plus :high-url="imgHighUrl">
   <div style="width:100px; height: 200px"></div>
-</vue-photo-zoom-pro>
+</vue-magnifier-plus>
 ```
 
 ### 自定义缩放区域
 
 ```html
-<vue-photo-zoom-pro>
+<vue-magnifier-plus>
   <template #zoomer>
     <!-- Is the same as the canvas-1 -->
     <canvas id="canvas-2" width="100" height="100"></canvas>
   </template>
   <canvas id="canvas-1" width="100" height="100"></canvas>
-</vue-photo-zoom-pro>
+</vue-magnifier-plus>
 ```
 
 ```js

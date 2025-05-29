@@ -1,15 +1,15 @@
 <template>
-  <vue-photo-zoom-pro
+  <vue-magnifier-plus
     :url="$withBase('/image.jpg')"
     :highUrl="$withBase('/image-high.jpg')"
-  ></vue-photo-zoom-pro>
+  ></vue-magnifier-plus>
 </template>
 
 <script>
-import VuePhotoZoomPro from '../../../src/vue-photo-zoom-pro.vue'
+import VueMagnifierPlus from '../../../src/vue-magnifier-plus.vue'
 export default {
   components: {
-    VuePhotoZoomPro,
+    VueMagnifierPlus,
   },
 }
 </script>

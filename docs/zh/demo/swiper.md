@@ -6,7 +6,7 @@
 
 ```vue
 <template>
-  <vue-photo-zoom-pro type="circle" :high-url="url">
+  <vue-magnifier-plus type="circle" :high-url="url">
     <div class="swiper-container">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
@@ -20,11 +20,11 @@
         </div>
       </div>
     </div>
-  </vue-photo-zoom-pro>
+  </vue-magnifier-plus>
 </template>
 
 <script>
-import VuePhotoZoomPro from 'vue-photo-zoom-pro'
+import VueMagnifierPlus from 'vue-magnifier-plus'
 
 const images = [
   '/swiper-image-1.jpg',
@@ -34,7 +34,7 @@ const images = [
 
 export default {
   components: {
-    vuePhotoZoomPro: VuePhotoZoomPro,
+    VueMagnifierPlus: VueMagnifierPlus,
   },
   data() {
     return {
@@ -57,11 +57,11 @@ export default {
 
 
 <style scoped>
-.vue-photo-zoom-pro {
+.vue-magnifier-plus {
   width: 100%;
 }
 
-.vue-photo-zoom-pro >>> .selector {
+.vue-magnifier-plus >>> .selector {
   z-index: 2!important;
 }
 </style>

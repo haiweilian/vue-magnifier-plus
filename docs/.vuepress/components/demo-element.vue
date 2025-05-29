@@ -1,21 +1,21 @@
 <template>
-  <vue-photo-zoom-pro style="width: 100%; font-size: inherit;">
+  <vue-magnifier-plus style="width: 100%; font-size: inherit;">
     <element-preview el=".vp-sidebar-items"></element-preview>
     <template #zoomer>
       <element-zoomer el=".vp-sidebar-items"></element-zoomer>
     </template>
-  </vue-photo-zoom-pro>
+  </vue-magnifier-plus>
 </template>
 
 <script>
-import VuePhotoZoomPro, {
+import VueMagnifierPlus, {
   ElementPreview,
   ElementZoomer,
-} from '../../../src/vue-photo-zoom-pro.vue'
+} from '../../../src/vue-magnifier-plus.vue'
 
 export default {
   components: {
-    VuePhotoZoomPro,
+    VueMagnifierPlus,
     ElementPreview: ElementPreview,
     ElementZoomer: ElementZoomer,
   }
@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style scoped>
-.vue-photo-zoom-pro >>> .vp-sidebar-items {
+.vue-magnifier-plus >>> .vp-sidebar-items {
   background-color: #fff;
 }
 </style>

@@ -6,8 +6,8 @@
 
 ```vue
 <template>
-  <vue-photo-zoom-pro
-    ref="vuePhotoZoomPro"
+  <vue-magnifier-plus
+    ref="VueMagnifierPlus"
     style="width: 100%"
     url="/image.jpg"
     highUrl="/image-high.jpg"
@@ -26,11 +26,11 @@
     >
       <img src="/image.jpg" @load="update" />
     </div>
-  </vue-photo-zoom-pro>
+  </vue-magnifier-plus>
 </template>
 
 <script>
-import VuePhotoZoomPro from 'vue-photo-zoom-pro'
+import VueMagnifierPlus from 'vue-magnifier-plus'
 
 const getScrollInfo = () => {
   const { documentElement, body } = document
@@ -46,7 +46,7 @@ const getScrollInfo = () => {
 
 export default {
   components: {
-    VuePhotoZoomPro,
+    VueMagnifierPlus,
   },
   data() {
     return {
@@ -64,7 +64,7 @@ export default {
     },
   },
   mounted() {
-    this.$vuePhotoZoomPro = this.$refs['vuePhotoZoomPro']
+    this.$VueMagnifierPlus = this.$refs['VueMagnifierPlus']
   },
   methods: {
     handleUpdate(e) {
@@ -72,7 +72,7 @@ export default {
       this.selectHeight = e.height
     },
     handleMouseEnter() {
-      this.$vuePhotoZoomPro.mouseEnter()
+      this.$VueMagnifierPlus.mouseEnter()
     },
     handleMouseMove(e) {
       const { left: mapLeft, top: mapTop } =
@@ -80,16 +80,16 @@ export default {
       const { scrollLeft, scrollTop } = getScrollInfo()
       const { pageX, pageY } = e
       const { miniMapScale } = this
-      this.$vuePhotoZoomPro.mouseMove(
+      this.$VueMagnifierPlus.mouseMove(
         (pageX - mapLeft - scrollLeft) * miniMapScale,
         (pageY - mapTop - scrollTop) * miniMapScale
       )
     },
     handleMouseLeave() {
-      this.$vuePhotoZoomPro.mouseLeave()
+      this.$VueMagnifierPlus.mouseLeave()
     },
     update() {
-      this.$vuePhotoZoomPro.update()
+      this.$VueMagnifierPlus.update()
     },
   },
 }

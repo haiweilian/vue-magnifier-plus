@@ -6,7 +6,7 @@
 
 ```vue
 <template>
-  <vue-photo-zoom-pro>
+  <vue-magnifier-plus>
     <canvas-preview
       url="/image.jpg"
       :width="720"
@@ -22,18 +22,18 @@
       ></canvas-zoomer>
     </template>
     <div class="rotate-icon" @click="handleRotate">🔄</div>
-  </vue-photo-zoom-pro>
+  </vue-magnifier-plus>
 </template>
 
 <script>
-import VuePhotoZoomPro, {
+import VueMagnifierPlus, {
   CanvasPreview,
   CanvasZoomer,
-} from 'vue-photo-zoom-pro'
+} from 'vue-magnifier-plus'
 
 export default {
   components: {
-    VuePhotoZoomPro,
+    VueMagnifierPlus,
     CanvasPreview: CanvasPreview,
     CanvasZoomer: CanvasZoomer,
   },

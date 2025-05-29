@@ -12,9 +12,9 @@ async function build (format) {
   await execaRollup([
     ['NODE_ENV', 'production'],
     ['FORMAT', format],
-    ['NAME', 'vue-photo-zoom-pro'],
-    ['GLOBAL', 'VuePhotoZoomPro'],
-    ['INPUT', 'src/vue-photo-zoom-pro.vue']
+    ['NAME', 'vue-magnifier-plus'],
+    ['GLOBAL', 'VueMagnifierPlus'],
+    ['INPUT', 'src/vue-magnifier-plus.vue']
   ])
 }
 

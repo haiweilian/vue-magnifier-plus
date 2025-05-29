@@ -11,8 +11,8 @@ const __dirname = getDirname(import.meta.url)
 const { description } = pkg
 
 export default defineUserConfig({
-  title: 'VuePhotoZoomPro',
-  base: '/vue-photo-zoom-pro/',
+  title: 'VueMagnifierPlus',
+  base: '/vue-magnifier-plus/',
   description: description,
   head: [
     ['meta', { name: 'theme-color', content: '#3eaf7c' }],
@@ -45,12 +45,12 @@ export default defineUserConfig({
   locales: {
     '/': {
       lang: 'en-US',
-      title: 'VuePhotoZoomPro',
+      title: 'VueMagnifierPlus',
       description: 'Vue picture magnifier',
     },
     '/zh/': {
       lang: 'zh-CN',
-      title: 'VuePhotoZoomPro',
+      title: 'VueMagnifierPlus',
       description: 'Vue图片放大镜',
     },
   },
@@ -163,8 +163,8 @@ export default defineUserConfig({
         },
       },
     },
-    repo: 'https://github.com/mater1996/vue-photo-zoom-pro',
-    docsDir: 'https://github.com/mater1996/vue-photo-zoom-pro',
+    repo: 'https://github.com/haiweilian/vue-magnifier-plus',
+    docsDir: 'https://github.com/haiweilian/vue-magnifier-plus',
     editLink: false,
     lastUpdated: false,
   }),

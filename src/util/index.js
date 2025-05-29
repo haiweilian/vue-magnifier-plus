@@ -139,7 +139,7 @@ export function cloneHtmlContent (el, exclude) {
   removeSelectors(bodyCopy, 'style')
   removeSelectors(bodyCopy, 'audio')
   removeSelectors(bodyCopy, 'video')
-  removeSelectors(bodyCopy, '.vue-photo-zoom-pro')
+  removeSelectors(bodyCopy, '.vue-magnifier-plus')
   exclude.forEach(selector => {
     removeSelectors(bodyCopy, selector)
   })

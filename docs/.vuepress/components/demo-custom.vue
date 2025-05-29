@@ -1,5 +1,5 @@
 <template>
-  <vue-photo-zoom-pro type="circle" :scale="scale">
+  <vue-magnifier-plus type="circle" :scale="scale">
     <div class="star-sky">
       <div
         class="landscape"
@@ -18,15 +18,15 @@
         <canvas id="canvas2"></canvas>
       </div>
     </template>
-  </vue-photo-zoom-pro>
+  </vue-magnifier-plus>
 </template>
 
 <script>
-import VuePhotoZoomPro from '../../../src/vue-photo-zoom-pro.vue'
+import VueMagnifierPlus from '../../../src/vue-magnifier-plus.vue'
 
 export default {
   components: {
-    vuePhotoZoomPro: VuePhotoZoomPro,
+    VueMagnifierPlus: VueMagnifierPlus,
   },
   data: function () {
     return {
@@ -225,7 +225,7 @@ export default {
 </script>
 
 <style  scoped>
-.vue-photo-zoom-pro {
+.vue-magnifier-plus {
   width: 100%;
 }
 

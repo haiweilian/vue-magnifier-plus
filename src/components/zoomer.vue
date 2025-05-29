@@ -26,7 +26,7 @@
 
 <script>
 export default {
-  name: 'VuePhotoZoomProZoomer',
+  name: 'VueMagnifierPlusZoomer',
   props: {
     left: {
       type: Number,

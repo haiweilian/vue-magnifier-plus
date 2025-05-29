@@ -1,7 +1,7 @@
 <template>
   <div
     ref="zoomRegion"
-    class="vue-photo-zoom-pro"
+    class="vue-magnifier-plus"
     @mouseenter="!disabledEvent && isFollowMode && handleMouseEnter($event)"
     @mousemove="!disabledEvent && isFollowMode && handleMouseMove($event)"
     @mouseleave="!disabledEvent && isFollowMode && handleMouseLeave($event)"
@@ -82,7 +82,7 @@ export { CanvasPreview, CanvasZoomer }
 export { ElementPreview, ElementZoomer }
 
 export default {
-  name: 'VuePhotoZoomPro',
+  name: 'VueMagnifierPlus',
   components: {
     Mask,
     Selector,
@@ -380,13 +380,13 @@ export default {
 </script>
 
 <style scoped>
-.vue-photo-zoom-pro {
+.vue-magnifier-plus {
   position: relative;
   display: inline-block;
   font-size: 0;
 }
 
-.vue-photo-zoom-pro .out-zoomer {
+.vue-magnifier-plus .out-zoomer {
   position: absolute;
   right: -8px;
   background-repeat: no-repeat;

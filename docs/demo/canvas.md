@@ -13,7 +13,7 @@
       :height="360"
       :rotate="rotate"
     ></canvas-preview>
-    <template slot="zoomer">
+    <template #zoomer>
       <canvas-zoomer
         url="/image-high.jpg"
         :width="720"

@@ -1,8 +1,3 @@
----
-sidebar: auto
-sidebarDepth: 2
----
-
 # 指南
 
 ## 安装
@@ -109,7 +104,7 @@ export deafult{
 
 ```html
 <vue-photo-zoom-pro>
-  <template slot="zoomer">
+  <template #zoomer>
     <!-- Is the same as the canvas-1 -->
     <canvas id="canvas-2" width="100" height="100"></canvas>
   </template>

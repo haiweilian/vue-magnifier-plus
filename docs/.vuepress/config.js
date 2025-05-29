@@ -1,6 +1,16 @@
-const { description } = require('../../package')
+import { defineUserConfig } from 'vuepress'
+import { getDirname, path } from 'vuepress/utils'
+import { viteBundler } from '@vuepress/bundler-vite'
+import { defaultTheme } from '@vuepress/theme-default'
+import { backToTopPlugin } from '@vuepress/plugin-back-to-top'
+import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom'
+import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
+import pkg from '../../package.json' assert { type: 'json' }
 
-module.exports = {
+const __dirname = getDirname(import.meta.url)
+const { description } = pkg
+
+export default defineUserConfig({
   title: 'VuePhotoZoomPro',
   base: '/vue-photo-zoom-pro/',
   description: description,
@@ -44,11 +54,11 @@ module.exports = {
       description: 'Vue图片放大镜',
     },
   },
-  themeConfig: {
+  theme: defaultTheme({
     locales: {
       '/': {
-        selectText: 'Languages',
-        nav: [
+        selectLanguageText: 'Languages',
+        navbar: [
           {
             text: 'Guide',
             link: '/guide/',
@@ -67,10 +77,17 @@ module.exports = {
           },
         ],
         sidebar: {
+          '/guide/': [
+            {
+              text: '',
+              collapsible: false,
+              children: [''],
+            },
+          ],
           '/demo/': [
             {
-              title: 'Demo',
-              collapsable: false,
+              text: 'Demo',
+              collapsible: false,
               children: [
                 'image',
                 'canvas',
@@ -83,16 +100,16 @@ module.exports = {
           ],
           '/setting/': [
             {
-              title: 'Setting',
-              collapsable: false,
+              text: 'Setting',
+              collapsible: false,
               children: ['props', 'event', 'methods', 'slot', 'plugins'],
             },
           ],
         },
       },
       '/zh/': {
-        selectText: '选择语言',
-        nav: [
+        selectLanguageText: '选择语言',
+        navbar: [
           {
             text: '指南',
             link: '/zh/guide/',
@@ -111,10 +128,17 @@ module.exports = {
           },
         ],
         sidebar: {
+          '/zh/guide/': [
+            {
+              text: '',
+              collapsible: false,
+              children: [''],
+            },
+          ],
           '/zh/demo/': [
             {
-              title: '示例',
-              collapsable: false,
+              text: '示例',
+              collapsible: false,
               children: [
                 'image',
                 'canvas',
@@ -127,8 +151,8 @@ module.exports = {
           ],
           '/zh/setting/': [
             {
-              title: '配置',
-              collapsable: false,
+              text: '配置',
+              collapsible: false,
               children: ['props', 'event', 'methods', 'slot', 'plugins'],
             },
           ],
@@ -136,10 +160,19 @@ module.exports = {
       },
     },
     repo: 'https://github.com/mater1996/vue-photo-zoom-pro',
-    editLinks: false,
     docsDir: 'https://github.com/mater1996/vue-photo-zoom-pro',
-    editLinkText: '',
+    editLink: false,
     lastUpdated: false,
-  },
-  plugins: ['@vuepress/plugin-back-to-top', '@vuepress/plugin-medium-zoom'],
-}
+  }),
+  plugins: [
+    backToTopPlugin(),
+    mediumZoomPlugin(),
+    registerComponentsPlugin({
+      componentsDir: path.resolve(__dirname, 'components'),
+    }),
+  ],
+  bundler: viteBundler({
+    viteOptions: {},
+    vuePluginOptions: {},
+  }),
+})

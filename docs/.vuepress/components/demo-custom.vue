@@ -8,7 +8,7 @@
       <div class="filter"></div>
       <canvas id="canvas1"></canvas>
     </div>
-    <template slot="zoomer">
+    <template #zoomer>
       <div class="star-sky">
         <div
           class="landscape"

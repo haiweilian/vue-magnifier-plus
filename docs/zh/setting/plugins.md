@@ -31,7 +31,7 @@ new Vue({
 <template>
   <vue-photo-zoom-pro>
     <img-preview :url="imgUrl"></img-preview>
-    <template slot="zoomer">
+    <template #zoomer>
       <img-zoomer :url="imgHighUrl"></img-zoomer>
     </template>
   </vue-photo-zoom-pro>
@@ -72,7 +72,7 @@ new Vue({
 <template>
   <vue-photo-zoom-pro>
     <canvas-preview :url="imgUrl" width="960" height="480"></canvas-preview>
-    <template slot="zoomer">
+    <template #zoomer>
       <canvas-zoomer :url="imgHighUrl" width="960" height="480"></canvas-zoomer>
     </template>
   </vue-photo-zoom-pro>

@@ -6,7 +6,7 @@
       :height="360"
       :rotate="rotate"
     ></canvas-preview>
-    <template slot="zoomer">
+    <template #zoomer>
       <canvas-zoomer
         :url="$withBase('/image-high.jpg')"
         :width="720"

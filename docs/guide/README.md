@@ -1,8 +1,3 @@
----
-sidebar: auto
-sidebarDepth: 2
----
-
 # Guide
 
 ## Install
@@ -103,7 +98,7 @@ You can use any element to represent the preview area.
 
 ```html
 <vue-photo-zoom-pro>
-  <template slot="zoomer">
+  <template #zoomer>
     <!-- Is the same as the canvas-1 -->
     <canvas id="canvas-2" width="100" height="100"></canvas>
   </template>

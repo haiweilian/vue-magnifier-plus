@@ -2,13 +2,13 @@
   <div
     ref="zoomRegion"
     class="vue-photo-zoom-pro"
-    @mouseenter="!disabledEvent && handleMouseEnter($event)"
-    @mousemove="!disabledEvent && handleMouseMove($event)"
-    @mouseleave="!disabledEvent && handleMouseLeave($event)"
+    @mouseenter="!disabledEvent && isFollowMode && handleMouseEnter($event)"
+    @mousemove="!disabledEvent && isFollowMode && handleMouseMove($event)"
+    @mouseleave="!disabledEvent && isFollowMode && handleMouseLeave($event)"
   >
     <Mask
       v-if="mask"
-      v-show="mouseEnterFlag"
+      v-show="mouseEnterFlag || isDragMode"
       :width="zoomRegionRect.width"
       :height="zoomRegionRect.height"
       :mask-color="maskColor"
@@ -16,9 +16,16 @@
     />
     <Selector
       v-if="selector"
-      v-show="mouseEnterFlag"
+      v-show="mouseEnterFlag || isDragMode"
       v-bind="selectorProps"
       :type="type"
+      :mode="mode"
+      @mousedown="!disabledEvent && isDragMode && handleDragStart($event)"
+      @mousemove="!disabledEvent && isDragMode && handleDragMove($event)"
+      @mouseup="!disabledEvent && isDragMode && handleDragEnd($event)"
+      @touchstart="!disabledEvent && isDragMode && handleDragStart($event)"
+      @touchmove="!disabledEvent && isDragMode && handleDragMove($event)"
+      @touchend="!disabledEvent && isDragMode && handleDragEnd($event)"
     >
       <Zoomer
         v-if="!outZoomer"
@@ -35,7 +42,7 @@
     </Selector>
     <Zoomer
       v-if="outZoomer"
-      v-show="mouseEnterFlag"
+      v-show="mouseEnterFlag || isDragMode"
       class="out-zoomer"
       v-bind="zoomerProps"
       :style="outZoomerPosition"
@@ -53,6 +60,7 @@
     <slot />
   </div>
 </template>
+
 <script>
 import Mask from './components/mask.vue'
 import Zoomer from './components/zoomer.vue'
@@ -103,6 +111,13 @@ export default {
         return ['circle', 'square'].indexOf(value) !== -1
       }
     },
+    mode: {
+      type: String,
+      default: 'follow',
+      validator: function (value) {
+        return ['follow', 'drag'].indexOf(value) !== -1
+      }
+    },
     scale: {
       type: Number,
       default: 2
@@ -145,10 +160,23 @@ export default {
         top: 0,
         width: 0,
         height: 0
+      },
+      dragFlag: false,
+      dragStart: {
+        pageX: 0,
+        pageY: 0,
+        mouseX: 0,
+        mouseY: 0
       }
     }
   },
   computed: {
+    isDragMode () {
+      return this.mode === 'drag'
+    },
+    isFollowMode () {
+      return this.mode === 'follow'
+    },
     selectorOptions () {
       return typeof this.selector === 'object'
         ? this.selector
@@ -253,6 +281,9 @@ export default {
     }
   },
   watch: {
+    mode () {
+      this.initSelector()
+    },
     scale () {
       this.handleMouseMove(this.pointerInfo)
     },
@@ -266,9 +297,14 @@ export default {
   mounted () {
     this.$zoomRegion = this.$refs.zoomRegion
     this.update()
+    this.initSelector()
     this.$emit('created')
   },
   methods: {
+    initSelector () {
+      const { width, height } = this.zoomRegionRect
+      this.mouseMove(width / 2, height / 2)
+    },
     handleMouseEnter () {
       this.mouseEnter()
     },
@@ -288,6 +324,34 @@ export default {
     },
     handleMouseLeave () {
       this.mouseLeave()
+    },
+    handleDragStart (e) {
+      e = e.touches ? e.touches[0] : e
+      this.dragFlag = true
+      this.dragStart = {
+        pageX: e.pageX,
+        pageY: e.pageY,
+        mouseX: this.mouse.x,
+        mouseY: this.mouse.y
+      }
+    },
+    handleDragMove (e) {
+      if (!this.dragFlag) return
+      e = e.touches ? e.touches[0] : e
+      const dx = e.pageX - this.dragStart.pageX
+      const dy = e.pageY - this.dragStart.pageY
+      const newX = this.dragStart.mouseX + dx
+      const newY = this.dragStart.mouseY + dy
+
+      let mouse = { x: newX, y: newY }
+      mouse = !this.selectorOptions.release
+        ? getBoundValue(mouse, this.pointBound)
+        : mouse
+
+      this.mouseMove(mouse.x, mouse.y)
+    },
+    handleDragEnd () {
+      this.dragFlag = false
     },
     mouseEnter () {
       !this.disabledReactive && this.update()

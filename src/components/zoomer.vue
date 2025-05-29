@@ -80,6 +80,8 @@ export default {
 <style scoped>
 .zoomer {
   overflow: hidden;
+  cursor: crosshair;
+  pointer-events: none;
 }
 
 .zoomer .custom-zoomer {

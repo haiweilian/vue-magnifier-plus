@@ -1,7 +1,7 @@
 <template>
   <img
     class="img-preview"
-    style="display: block;width: 100%"
+    style="display: block; width: 100%"
     :src="url"
     v-bind="$attrs"
   >

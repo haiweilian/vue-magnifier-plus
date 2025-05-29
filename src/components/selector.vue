@@ -6,7 +6,7 @@
 -->
 <template>
   <div
-    :class="['selector', type]"
+    :class="['selector', type, mode]"
     :style="selectorStyle"
   >
     <slot />
@@ -36,6 +36,10 @@ export default {
     type: {
       type: String,
       default: 'square'
+    },
+    mode: {
+      type: String,
+      default: 'follow'
     }
   },
   computed: {
@@ -63,5 +67,11 @@ export default {
 
 .selector.circle {
   border-radius: 50%;
+}
+
+.selector.drag {
+  cursor: -webkit-grabbing;
+  pointer-events: initial;
+  touch-action: none;
 }
 </style>

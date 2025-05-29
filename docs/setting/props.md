@@ -42,6 +42,13 @@ Magnifier type.
 - Type: `'circle' | 'square'`
 - Default: `'square'`
 
+## mode
+
+Selector the movement mode.
+
+- Type: `'follow' | 'drag'`
+- Default: `'follow'`
+
 ## selector
 
 Show or remove selector, release: Whether the selector is restricted to the preview area

@@ -18,6 +18,7 @@ export default {
         url: '',
         highUrl: '',
         type: 'square',
+        mode: 'follow',
         selector: true,
         releaseSelector: false,
         outZoomer: false,
@@ -40,6 +41,7 @@ export default {
     gui.add(props, 'url')
     gui.add(props, 'highUrl')
     gui.add(props, 'type').options(['circle', 'square'])
+    gui.add(props, 'mode').options(['follow', 'drag'])
     gui.add(props, 'selector')
     gui.add(props, 'releaseSelector').onChange(function (value) {
       if (props.selector) {

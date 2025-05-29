@@ -49,6 +49,13 @@
 - Type: `'circle' | 'square'`
 - Default: `'square'`
 
+## mode
+
+选择器移动模式。
+
+- Type: `'follow' | 'drag'`
+- Default: `'follow'`
+
 ## selector
 
 是否显示选择器, release: 选择器是否限制在预览区域内。

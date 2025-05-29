@@ -6,7 +6,7 @@
     @mousemove="!disabledEvent && handleMouseMove($event)"
     @mouseleave="!disabledEvent && handleMouseLeave($event)"
   >
-    <PhotoMask
+    <Mask
       v-if="mask"
       v-show="mouseEnterFlag"
       :width="zoomRegionRect.width"
@@ -54,7 +54,7 @@
   </div>
 </template>
 <script>
-import PhotoMask from './components/photo-mask.vue'
+import Mask from './components/mask.vue'
 import Zoomer from './components/zoomer.vue'
 import Selector from './components/selector.vue'
 import { ImgPreview, ImgZoomer } from './plugins/img/index.js'
@@ -73,7 +73,7 @@ export { CanvasPreview, CanvasZoomer }
 export default {
   name: 'VuePhotoZoomPro',
   components: {
-    PhotoMask,
+    Mask,
     Selector,
     Zoomer,
     ImgPreview,

@@ -96,7 +96,6 @@ export default {
 .block {
   width: 30%;
   height: 50px;
-  background: inherit;
 }
 
 .block.left {

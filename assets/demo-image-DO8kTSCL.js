@@ -1,0 +1,1 @@
+import{V as r}from"./vue-magnifier-plus-C_nV7H4X.js";import{_ as s,r as n,e as a,o as i}from"./app-DEnQp1EX.js";const t={components:{VueMagnifierPlus:r}};function p(e,m,c,l,u,g){const o=n("vue-magnifier-plus");return i(),a(o,{url:e.$withBase("/image.jpg"),highUrl:e.$withBase("/image-high.jpg")},null,8,["url","highUrl"])}const h=s(t,[["render",p]]);export{h as default};

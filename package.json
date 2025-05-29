@@ -24,7 +24,8 @@
     "prepare": "husky install",
     "lint:fix": "npx eslint --fix . --ext .js,.vue",
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs",
+    "docs:deploy": "npm run docs:build && gh-pages -d docs/.vuepress/dist"
   },
   "lint-staged": {
     "*.{js,vue}": [
@@ -70,6 +71,7 @@
     "eslint-plugin-standard": "^5.0.0",
     "eslint-plugin-vue": "^7.15.1",
     "execa": "^5.1.1",
+    "gh-pages": "^6.3.0",
     "husky": "^7.0.1",
     "lint-staged": "^11.1.2",
     "postcss": "^8.3.9",

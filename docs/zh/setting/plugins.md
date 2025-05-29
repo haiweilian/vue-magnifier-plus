@@ -96,3 +96,56 @@ new Vue({
 | width     | Number | 图片宽  | canvas 宽      |
 | height    | Number | 图片高  | canvas 高      |
 | rotate    | Number | 0       | 旋转角度       |
+
+
+## ElementPlugin
+
+预览和缩放页面元素。
+
+```js
+import { ElementZoomer, ElementPreview } from 'vue-photo-zoom-pro'
+
+export default {
+  components: {
+    ElementPreview,
+    ElementZoomer,
+  },
+}
+```
+
+或者使用 cdn
+
+```js
+new Vue({
+  el: '#app',
+  components: {
+    ElementPreview: VuePhotoZoomPro.ElementPreview,
+    ElementZoomer: VuePhotoZoomPro.ElementZoomer,
+  },
+})
+```
+
+```html
+<template>
+  <vue-photo-zoom-pro mask style="width: 100%; font-size: inherit;">
+    <element-preview el=".selector"></element-preview>
+    <template #zoomer>
+      <element-zoomer el=".selector"></element-zoomer>
+    </template>
+  </vue-photo-zoom-pro>
+</template>
+```
+
+#### ElementPreview props
+
+| Prop Name | Type   | Default | Note      |
+| --------- | ------ | ------- | --------- |
+| el        | String | 'body'  | 元素选择器 |
+| exclude   | Array  |  []     | 排除元素列表 |
+
+#### ElementZoomer props
+
+| Prop Name | Type   | Default | Note      |
+| --------- | ------ | ------- | --------- |
+| el        | String | 'body'  | 元素选择器 |
+| exclude   | Array  |  []     | 排除元素列表 |

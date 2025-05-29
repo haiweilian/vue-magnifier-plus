@@ -67,6 +67,7 @@ import Zoomer from './components/zoomer.vue'
 import Selector from './components/selector.vue'
 import { ImgPreview, ImgZoomer } from './plugins/img/index.js'
 import { CanvasPreview, CanvasZoomer } from './plugins/canvas/index.js'
+import { ElementPreview, ElementZoomer } from './plugins/element/index.js'
 import {
   getBoundingClientRect,
   getBoundValue,
@@ -77,6 +78,8 @@ import {
 export { ImgPreview, ImgZoomer }
 
 export { CanvasPreview, CanvasZoomer }
+
+export { ElementPreview, ElementZoomer }
 
 export default {
   name: 'VuePhotoZoomPro',

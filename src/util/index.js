@@ -103,3 +103,46 @@ export function rotateCanvas (canvas, img, width, height, step) {
       break
   }
 }
+
+function removeSelectors (container, selector) {
+  const elements = container.querySelectorAll(selector)
+  if (elements.length > 0) {
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].parentNode.removeChild(elements[i])
+    }
+  }
+}
+
+export function cloneHtmlContent (el, exclude) {
+  const bodyOriginal = document.querySelector(el)
+  const bodyCopy = bodyOriginal.cloneNode(true)
+  bodyCopy.style.cursor = 'auto'
+  bodyCopy.style.userSelect = 'none'
+  bodyCopy.style.pointerEvents = 'none'
+
+  const canvasOriginal = bodyOriginal.querySelectorAll('canvas')
+  const canvasCopy = bodyCopy.querySelectorAll('canvas')
+  if (canvasOriginal.length > 0) {
+    if (canvasOriginal.length === canvasCopy.length) {
+      for (let i = 0; i < canvasOriginal.length; i++) {
+        const ctx = canvasCopy[i].getContext('2d')
+        try {
+          ctx.drawImage(canvasOriginal[i], 0, 0)
+        } catch (error) {
+        //
+        }
+      }
+    }
+  }
+
+  removeSelectors(bodyCopy, 'script')
+  removeSelectors(bodyCopy, 'style')
+  removeSelectors(bodyCopy, 'audio')
+  removeSelectors(bodyCopy, 'video')
+  removeSelectors(bodyCopy, '.vue-photo-zoom-pro')
+  exclude.forEach(selector => {
+    removeSelectors(bodyCopy, selector)
+  })
+
+  return bodyCopy
+}

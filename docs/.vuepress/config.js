@@ -91,6 +91,7 @@ export default defineUserConfig({
               children: [
                 'image',
                 'canvas',
+                'element',
                 'swiper',
                 'custom',
                 'full',
@@ -143,6 +144,7 @@ export default defineUserConfig({
               children: [
                 'image',
                 'canvas',
+                'element',
                 'swiper',
                 'custom',
                 'full',

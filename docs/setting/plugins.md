@@ -43,7 +43,7 @@ new Vue({
 </template>
 ```
 
-## Canvas
+## CanvasPlugin
 
 Preview and zoom image using canvas, this support rotate image.
 
@@ -98,3 +98,55 @@ new Vue({
 | width     | Number | Img width  | Canvas width   |
 | height    | Number | Img height | Canvas height  |
 | rotate    | Number | 0          | Rotation Angle |
+
+## ElementPlugin
+
+Preview and zoom page elements.
+
+```js
+import { ElementZoomer, ElementPreview } from 'vue-photo-zoom-pro'
+
+export default {
+  components: {
+    ElementPreview,
+    ElementZoomer,
+  },
+}
+```
+
+or cdn
+
+```js
+new Vue({
+  el: '#app',
+  components: {
+    ElementPreview: VuePhotoZoomPro.ElementPreview,
+    ElementZoomer: VuePhotoZoomPro.ElementZoomer,
+  },
+})
+```
+
+```html
+<template>
+  <vue-photo-zoom-pro mask style="width: 100%; font-size: inherit;">
+    <element-preview el=".selector"></element-preview>
+    <template #zoomer>
+      <element-zoomer el=".selector"></element-zoomer>
+    </template>
+  </vue-photo-zoom-pro>
+</template>
+```
+
+#### ElementPreview props
+
+| Prop Name | Type   | Default | Note           |
+| --------- | ------ | ------- | -------------- |
+| el        | String | 'body'  | Element selector |
+| exclude   | Array  |  []     | Exclude elements list |
+
+#### ElementZoomer props
+
+| Prop Name | Type   | Default | Note           |
+| --------- | ------ | ------- | -------------- |
+| el        | String | 'body'  | Element selector |
+| exclude   | Array  |  []     | Exclude elements list |
